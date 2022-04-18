@@ -12,8 +12,8 @@
 
 typedef struct all_formats
 {
-		char *type;
-			int (*f)(va_list arg);
+	char *type;
+	int (*f)(va_list arg);
 } format_t;
 
 int print_i(va_list arg);
