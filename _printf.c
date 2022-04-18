@@ -13,14 +13,14 @@ int _printf(const char *format, ...)
 {
 	va_list arg;
 	int (*f)(va_list);
-	int i = 0, j = 0, length = 0;
+	int i = 0, length = 0;
 
 	va_start(arg, format);
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
-			f = get_format(&format[i[);
+			f = get_format(&format[i]);
 
 			if (f != NULL)
 			{
@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				if (format[i] == '%' && format[i + 1] == '\0])
+				if (format[i] == '%' && format[i + 1] == '\0')
 					return (-1);
 				length += _putchar(format[i]);
 			}
@@ -63,7 +63,7 @@ int (*get_format(const char *format))(va_list arg)
 
 	for (i = 0; list[i].type != NULL; i++)
 	{
-		if (list[i].type == *format)
+		if (*list[i].type == format[i + 1])
 			return (list[i].f);
 	}
 
