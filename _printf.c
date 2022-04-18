@@ -13,37 +13,38 @@ int _printf(const char *format, ...)
 {
 	va_list arg;
 	char *s, c;
-	int d, length = 0;
+	int i=0, j = 0, length = 0;
 
 	va_start(arg, format);
-	while (*format)
+	while (format[i])
 	{
-		if (*format == '%')
+		if (format[i] == '%')
 			{
-				if (*(format + 1) == 'c')
+				if (format[i + 1] == 'c')
 				{
 					c = (char)va_arg(arg, int);
 					putchar(c);
-					*format++;
-				}else if (*(format + 1) == 's')
+					i++;
+				}else if (format[i + 1] == 's')
 				{
-					s = va_arg(arg, int);
+					s = va_arg(arg, char *);
+					j = 0;
 
-					while (*s)
+					while (s[j])
 					{
-						putchar(*s);
-						*s++;
+						putchar(s[j]);
+						j++;
 					}
-					*format++;
-				}else if (*(format + 1) == '%')
+					i++;
+				}else if (format[i + 1] == '%')
 				{
 					putchar('%');
-					*format++;
+					i++;
 				}
-				*format++;
+				i++;
 			}
-		putchar(*format);
-		*format++;
+		putchar(format[i]);
+		i++;
 		length++;
 	}
 	va_end(arg);
