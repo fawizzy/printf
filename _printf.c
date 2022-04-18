@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 {
 	va_list arg;
 	char *s, c;
-	int i=0, j = 0, length = 0;
+	int i = 0, j = 0, length = 0;
 
 	va_start(arg, format);
 	while (format[i])
@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 					c = (char)va_arg(arg, int);
 					putchar(c);
 					i++;
-				}else if (format[i + 1] == 's')
+				} else if (format[i + 1] == 's')
 				{
 					s = va_arg(arg, char *);
 					j = 0;
@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 						j++;
 					}
 					i++;
-				}else if (format[i + 1] == '%')
+				} else if (format[i + 1] == '%')
 				{
 					putchar('%');
 					i++;
