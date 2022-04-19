@@ -31,6 +31,17 @@ int _printf(const char *format, ...)
 				length += print_c(arg);
 				i += 2;
 			}
+			if (format[i + 1] == 's')
+			{
+				length += print_s(arg);
+				i += 2;
+			}
+			if (format[i + 1] == '%')
+			{
+				_putchar('%');
+				i += 2;
+				length += 1;
+			}
 		}
 	}
 
