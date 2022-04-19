@@ -11,7 +11,6 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, length = 0;
-	char ch;
 	
 	va_list(arg);
 
@@ -29,11 +28,8 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == 'c')
 			{
-				/*length += print_c(arg);*/
-				ch = (char)va_arg(arg, int);
-				_putchar(ch);
+				length += print_c(arg);
 				i += 2;
-				length += 1;
 			}
 			if (format[i + 1] == 's')
 			{
