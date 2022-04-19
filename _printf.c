@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == 'c')
 			{
-				print_c(arg);
+				length += print_c(arg);
 				i += 2;
 			}
 		}

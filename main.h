@@ -30,6 +30,7 @@ int print_oct(va_list list);
 int print_hex(va_list lits);
 int print_X(va_list list);
 int rot13(va_list list);
+int print_c(va_list list);
 int _printf(const char *format, ...);
 int parse(const char *format, type f_list[], va_list arg_list);
 unsigned int base_len(unsigned int, int);
