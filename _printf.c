@@ -18,6 +18,8 @@ int _printf(const char *format, ...)
 
 	while (format[i])
 	{
+		if (format == NULL)
+			return (-1);
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
