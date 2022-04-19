@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 
-int print_c(va_list arg)
+int print_char(va_list arg)
 {
 	char ch;
 
@@ -11,7 +11,7 @@ int print_c(va_list arg)
 	return (1);
 }
 
-int print_s(va_list arg)
+int print_string(va_list arg)
 {
 	char *str;
 	int i = 0;

@@ -10,7 +10,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0, length = 0;
+	int i = 0, result = 0;
 	
 	va_list(arg);
 
@@ -18,34 +18,21 @@ int _printf(const char *format, ...)
 
 	while (format[i])
 	{
-		if (format == NULL)
-			return (-1);
-		if (format[i] != '%')
+		if (format[i] == '\0')
 		{
-			_putchar(format[i]);
+			return (result);
+		}
+		else if (format[i] == '%' && format[i + 1])
+		{
+			result += (*format_conversion(format[i + 1]))(arg);
 			i++;
-			length++;
 		}
 		else
 		{
-			if (format[i + 1] == 'c')
-			{
-				length += print_c(arg);
-				i += 2;
-			}
-			if (format[i + 1] == 's')
-			{
-				length += print_s(arg);
-				i += 2;
-			}
-			if (format[i + 1] == '%')
-			{
-				_putchar('%');
-				i += 2;
-				length += 1;
-			}
+			result += _putchar(format[i]);
 		}
+		i++;
 	}
 
-	return (length);
+	return (result);
 }
