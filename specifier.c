@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdarg.h>
 
 /**
  *  * format_conversion - pointer function
@@ -14,7 +16,7 @@ int (*format_conversion(char s))(va_list)
 		{'c', print_char},
 		{'s', print_string},
 		{'%', percentage},
-		{'\0', 0}
+		{'\0', NULL}
 		};
 
 	unsigned int i;
@@ -23,10 +25,15 @@ int (*format_conversion(char s))(va_list)
 	{
 		if (conversion_type[i].F == s)
 		{
-			break;
+			return (conversion_type[i].T);
 		}
 
 	}
-
+	if (conversion_type[i].F == '\0' || conversion_type[i].F == 0)
+	{
+		_putchar(s);
+		return (NULL);
+	}
 	return (conversion_type[i].T);
 }
+

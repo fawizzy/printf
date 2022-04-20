@@ -22,6 +22,7 @@ int _putchar(char c);
 int print_string(va_list strlist);
 int print_digit(va_list intlist);
 int print_char(va_list charlist);
+int print_null(char);
 int (*format_conversion(char s))(va_list);
 int percentage(__attribute__((unused))va_list valist);
 
