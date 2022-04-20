@@ -1,29 +1,32 @@
-#ifndef MAIN_H
+#ifndef MAIN_H_
 #define MAIN_H
 
 #include <stdarg.h>
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
-
 /**
- *  * struct fmt - structure
- *   * @F: char holding the format.
- *    * @T: pointer function.
- *     */
-typedef struct fmt
+ * struct print - structure for printing various types
+ * @t: type to print
+ * @f: function to print
+ */
+typedef struct print
 {
-	char F;
-	int (*T)(va_list);
-} ft;
+	char *t;
+	int (*f)(va_list);
+} print_t;
 
-int _printf(const char *format, ...);
 int _putchar(char c);
-int print_string(va_list strlist);
-int print_digit(va_list intlist);
-int print_char(va_list charlist);
-int print_null(char);
-int (*format_conversion(char s))(va_list);
-int percentage(__attribute__((unused))va_list valist);
+int _printf(const char *format, ...);
+int print_c(va_list c);
+int print_s(va_list s);
+int print_i(va_list i);
+int print_d(va_list d);
+int print_u(va_list u);
+int print_b(va_list b);
+int print_o(va_list o);
+int print_x(va_list x);
+int print_X(va_list X);
+int print_p(va_list p);
+int print_S(va_list S);
+int print_r(va_list r);
+int print_R(va_list R);
 
-#endif
+#endif  /* MAIN_H */
