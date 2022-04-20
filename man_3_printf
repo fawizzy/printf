@@ -1,4 +1,4 @@
-.TH man 3 "26 July 2021" "0.10" "_printf man page"
+.TH man 3 "20 April 2022" "0.10" "_printf man page"
 .SH NAME
 .B _printf
 - Formatted output conversion.
@@ -58,7 +58,7 @@ A '%' is written but no argument is converted. The complete version specificatio
 .SH EXAMPLE
 To print the day of the year, where weekday and month are pointers to strings and day and year are integers:
 
-#include "holberton.h"
+#include "main.h"
 
 _printf("%s, %s %d, %d\\n", weekday, month, day, year);
 .SH SEE ALSO
@@ -67,4 +67,4 @@ _printf("%s, %s %d, %d\\n", weekday, month, day, year);
 No known bugs.
 Two unidentified bugs.
 .SH AUTHOR
-Yohannes Getu, Bryan Aniedi-Ekong
+FAWAZ ODUOLA, LAWAL FADLURAHMAN
